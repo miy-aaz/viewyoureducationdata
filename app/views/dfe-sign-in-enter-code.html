@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Enter code" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <p>We emailed a code to miya.aziz@education.gov.uk. Please enter the code to sign in.</p>
+
+    <form>
+       {{ govukInput({
+      id: "new[code]",
+      name: "new[code]",
+      value: data.new.code
+    }) }}
+
+    <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Cancel",
+    classes: "govuk-button--secondary",
+    href: "/dfe-sign-in-email"
+  }) }}
+
+  {{ govukButton({
+    text: "Verify"
+  }) }}
+</div>
+
+    </form>
+
+   
+  </div>
+</div>
+
+{% endblock %}
+

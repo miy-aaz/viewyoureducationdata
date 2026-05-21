@@ -1,0 +1,22 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Verify your identity" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <p>Email code to email</p>
+    {{ govukButton({
+      text: "Next",
+      href:"/dfe-sign-in-enter-code"
+    }) }}
+
+   
+  </div>
+</div>
+
+{% endblock %}
+
