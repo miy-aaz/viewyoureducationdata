@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Start" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">{{serviceName}}</h2>
+    <p>The View your education data (VYED) service provides analytical insights to support business intelligence and better decision making.</p>
+    <p>Organisations working with the Department for Education (DfE) can use it to access interactive dashboards and reports on the data your organisation submits.</p>
+
+    <h2 class="govuk-heading-m">Before you start</h2>
+    <p>You will need a DfE Sign-in account to access this service. Get help to<a href="#" class="govuk-link">create a DfE Sign-in account and access this service</a>.</p>
+
+    <h2 class="govuk-heading-m">If you are a DfE employee</h2>
+    <p><a href="#" class="govuk-link">Sign-in as an internal DfE user</a>, if you work for Department for Education.</p>
+
+    {{ govukButton({
+  text: "Start now",
+  href: "#",
+  isStartButton: true
+}) }}
+
+   
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Access the DfE Sign-in service" %}
+
+{% block beforeContent %}
+
+
+<div class="govuk-!-margin-top-4">
+  {% set dsiBanner %}
+    <p class="govuk-notification-banner__heading">
+      When you sign in, you'll be asked to verify your identity. Your verification code email is not sent automatically. When prompted, click on the box containing your email address to send your code.
+    </p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: dsiBanner,
+    titleText: "Get your verification code email"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form novalidate method="post">
+
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    {{ govukInput({
+      id: "new[dsiEmail]",
+      name: "new[dsiEmail]",
+      label: {
+        text: "Log into your account",
+        isPageHeading: true
+      },
+      classes: "govuk-!-width-three-quarters",
+      hint: {
+        text: "Enter your email address to sign in."
+      },
+      value: data.new.dsiEmail
+    }) }}
+
+    {{ govukButton({
+      text: "Next"
+    }) }}
+    </form>
+
+    <p>Next
+By signing in, you accept <a href=""> DfE Sign-in terms and conditions</a>.</p>
+
+<h2 class="govuk-heading-m">New users of DfE Sign-in</h2>
+
+{{ govukButton({
+  text: "Create an account",
+  classes: "govuk-button--secondary"
+}) }}
+
+{{ govukDetails({
+  summaryText: "Services using DfE Sign-in",
+  text: "Lorem ipsum"
+}) }}
+
+   
+  </div>
+</div>
+
+{% endblock %}
+

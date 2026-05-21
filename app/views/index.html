@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% set pageName="View your education data" %}
 
 {% block content %}
 
@@ -14,6 +14,10 @@
     </h1>
 
     {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+
+    {{ govukButton({
+      text: "Go to prototype"
+    }) }}
   </div>
 </div>
 
