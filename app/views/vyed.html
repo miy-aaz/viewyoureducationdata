@@ -2,24 +2,6 @@
 
 {% set pageName="View your education data" %}
 
-{% block beforeContent %}
-
-<div class="govuk-grid-row govuk-!-margin-top-4">
-  <div class="govuk-grid-column-full">
-
-{% set banner %}
-  <p class="govuk-notification-banner__heading">
-    <a class="govuk-notification-banner__link" href="#">Give feedback </a>to help improve the View your education data (VYED) service.
-  </p>
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: banner
-}) }}
-  </div>
-</div>
-
-{% endblock %}
 
 {% block content %}
 
@@ -30,6 +12,16 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
+
+    {% set banner %}
+  <p class="govuk-notification-banner__heading">
+    <a class="govuk-notification-banner__link" href="#">Give feedback </a>to help improve the View your education data (VYED) service.
+  </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: banner
+}) }}
 
     {% set adultSkillsFunding %}
       {{ govukDetails({
