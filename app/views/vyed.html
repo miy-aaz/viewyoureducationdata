@@ -19,7 +19,6 @@
   </div>
 </div>
 
-
 {% endblock %}
 
 {% block content %}
@@ -29,11 +28,8 @@
     <p class="govuk-body"><a href="#" class="govuk-link">Products</a></p>
     <p class="govuk-body"><a href="#" class="govuk-link">Downloads</a></p>
   </div>
+
   <div class="govuk-grid-column-two-thirds">
-
- 
-
-    
 
     {% set adultSkillsFunding %}
       {{ govukDetails({
@@ -52,17 +48,27 @@
       }) }}
     {% endset %}
 
-
+    <div class="govuk-form-group" style="display: flex; align-items: flex-end; gap: 10px;">
         {{ govukInput({
           label: {
             text: "Find a product",
             classes: "govuk-label--s"
           },
-          classes: "govuk-input--width-20"
+          classes: "govuk-input"
         }) }}
+
+     <div class="govuk-button-group">
         {{ govukButton({
           text: "Search"
         }) }}
+
+        {{ govukButton({
+          text: "Clear search",
+          classes: "govuk-button--secondary"
+        }) }}
+    </div>
+   </div>
+       
       
 
     {{ govukAccordion({
