@@ -1,0 +1,28 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Before you continue" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   <h1 class="govuk-heading-xl">{{pageName}}</h1>
+   <p>This sign in option is for internal Department for Education users only.</p>
+   <p>By selecting continue, you consent to use your Microsoft account details to access VYED.</p>
+
+   {{ govukButton({
+    text: "Continue",
+    isStartButton: true
+   }) }}
+
+
+   <h2 class="govuk-heading-m">Further support</h2>
+   <p>If you need help with anything, you can <a href="">submit an enquiry</a></p>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

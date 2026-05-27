@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Before you continue" %}
+
+{% block beforeContent %}
+
+<div class="govuk-grid-row govuk-!-margin-top-4">
+  <div class="govuk-grid-column-full">
+
+{% set banner %}
+  <p class="govuk-notification-banner__heading">
+    <a class="govuk-notification-banner__link" href="#">Give feedback </a>to help improve the View your education data (VYED) service.
+  </p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: banner
+}) }}
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body"><a href="#" class="govuk-link">Products</a></p>
+    <p class="govuk-body"><a href="#" class="govuk-link">Downloads</a></p>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+ 
+
+    
+
+    {% set adultSkillsFunding %}
+      {{ govukDetails({
+        summaryText: "Multiply dashboard",
+        html: '<ul class="govuk-list govuk-list--bullet"><li><a class="govuk-link" href="#">Multiply dashboard</a></li></ul>'
+      }) }}
+    {% endset %}
+
+    {% set childrensServices %}
+      {{ govukDetails({
+        summaryText: "Adoptions scorecard 2020",
+        html: '<ul class="govuk-list govuk-list--bullet">
+          <li><a class="govuk-link" href="#">Dashboard</a></li>
+          <li><a class="govuk-link" href="#">Adoptions scorecard guidance</a></li>
+        </ul>'
+      }) }}
+    {% endset %}
+
+
+        {{ govukInput({
+          label: {
+            text: "Find a product",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-20"
+        }) }}
+        {{ govukButton({
+          text: "Search"
+        }) }}
+      
+
+    {{ govukAccordion({
+      id: "",
+      items: [
+        {
+          heading: {
+            text: "Adult skills funding"
+          },
+          content: {
+            html: adultSkillsFunding
+          }
+        },
+        {
+          heading: {
+            text: "Children's services"
+          },
+          content: {
+            html: childrensServices
+          }
+        }
+      ]
+    }) }}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
