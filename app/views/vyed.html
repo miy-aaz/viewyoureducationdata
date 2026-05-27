@@ -2,93 +2,88 @@
 
 {% set pageName="View your education data" %}
 
-
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
     <p class="govuk-body"><a href="#" class="govuk-link">Products</a></p>
     <p class="govuk-body"><a href="#" class="govuk-link">Downloads</a></p>
-  </div>
+</div>
 
-  <div class="govuk-grid-column-two-thirds">
+ <div class="govuk-grid-column-two-thirds">
 
-    {% set banner %}
-  <p class="govuk-notification-banner__heading">
-    <a class="govuk-notification-banner__link" href="#">Give feedback </a>to help improve the View your education data (VYED) service.
-  </p>
-{% endset %}
+  {% set banner %}
+    <p class="govuk-notification-banner__heading">
+      <a class="govuk-notification-banner__link" href="#">Give feedback </a>to help improve the View your education data (VYED) service.
+    </p>
+  {% endset %}
 
-{{ govukNotificationBanner({
-  html: banner
-}) }}
+  {{ govukNotificationBanner({
+    html: banner
+  }) }}
 
-    {% set adultSkillsFunding %}
-      {{ govukDetails({
-        summaryText: "Multiply dashboard",
-        html: '<ul class="govuk-list govuk-list--bullet"><li><a class="govuk-link" href="#">Multiply dashboard</a></li></ul>'
-      }) }}
-    {% endset %}
-
-    {% set childrensServices %}
-      {{ govukDetails({
-        summaryText: "Adoptions scorecard 2020",
-        html: '<ul class="govuk-list govuk-list--bullet">
-          <li><a class="govuk-link" href="#">Dashboard</a></li>
-          <li><a class="govuk-link" href="#">Adoptions scorecard guidance</a></li>
-        </ul>'
-      }) }}
-    {% endset %}
-
-    <div class="govuk-form-group" style="display: flex; align-items: flex-end; gap: 10px;">
-        {{ govukInput({
-          label: {
-            text: "Find a product",
-            classes: "govuk-label--s"
-          },
-          classes: "govuk-input"
-        }) }}
-
-     <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Search"
-        }) }}
-
-        {{ govukButton({
-          text: "Clear search",
-          classes: "govuk-button--secondary"
-        }) }}
-    </div>
-   </div>
-       
-      
-
-    {{ govukAccordion({
-      id: "",
-      items: [
-        {
-          heading: {
-            text: "Adult skills funding"
-          },
-          content: {
-            html: adultSkillsFunding
-          }
-        },
-        {
-          heading: {
-            text: "Children's services"
-          },
-          content: {
-            html: childrensServices
-          }
-        }
-      ]
+  {% set adultSkillsFunding %}
+    {{ govukDetails({
+      summaryText: "Multiply dashboard",
+      html: '<ul class="govuk-list govuk-list--bullet"><li><a class="govuk-link" href="#">Multiply dashboard</a></li></ul>'
     }) }}
+  {% endset %}
+
+  {% set childrensServices %}
+    {{ govukDetails({
+      summaryText: "Adoptions scorecard 2020",
+      html: '<ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="#">Dashboard</a></li>
+        <li><a class="govuk-link" href="#">Adoptions scorecard guidance</a></li>
+      </ul>'
+    }) }}
+  {% endset %}
+
+  <div class="govuk-form-group" style="display: flex; align-items: flex-end; gap: 10px;">
+      {{ govukInput({
+        label: {
+          text: "Find a product",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input"
+      }) }}
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      {{ govukButton({
+        text: "Clear search",
+        classes: "govuk-button--secondary"
+      }) }}
+  </div>
+  </div>
+       
+  {{ govukAccordion({
+    id: "",
+    items: [
+      {
+        heading: {
+          text: "Adult skills funding"
+        },
+        content: {
+          html: adultSkillsFunding
+        }
+      },
+      {
+        heading: {
+          text: "Children's services"
+        },
+        content: {
+          html: childrensServices
+        }
+      }
+    ]
+  }) }}
 
 
   </div>
 </div>
-
-
 
 {% endblock %}

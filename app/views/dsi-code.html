@@ -11,7 +11,7 @@
     <p>We emailed a code to miya.aziz@education.gov.uk. Please enter the code to sign in.</p>
 
     <form>
-       {{ govukInput({
+    {{ govukInput({
       id: "new[code]",
       name: "new[code]",
       value: data.new.code
@@ -21,15 +21,17 @@
   {{ govukButton({
     text: "Cancel",
     classes: "govuk-button--secondary",
-    href: "/dfe-sign-in-email"
+    href: "/dsi-email.html"
   }) }}
 
   {{ govukButton({
-    text: "Verify"
-  }) }}
-</div>
+    text: "Verify",
+    href: "/vyed.html"
 
-    </form>
+  }) }}
+    </div>
+
+  </form>
 
    
   </div>
